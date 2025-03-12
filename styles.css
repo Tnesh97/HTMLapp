@@ -1,0 +1,318 @@
+/* Make the toggle icon grey */
+.toggle-icon i {
+    color: #b0b0b0; /* Sets the color of the toggle icon to light grey */
+    font-size: 1.2rem; /* Sets the font size of the toggle icon to 1.2rem */
+}
+
+/* Reduce the size of the bank icon */
+.bank-icon {
+    font-size: 1.3rem; /* Sets the font size of the bank icon to 1.3rem */
+    margin-right: 5px; /* Adds a right margin of 5px to create space between the icon and text */
+}
+
+/* Improve logout button alignment */
+.logout-btn {
+    display: flex; /* Makes the logout button a flex container */
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 8px; /* Adds an 8px gap between the icon and text */
+    padding: 8px 15px; /* Adds padding inside the button */
+    color: #dc3545 !important; /* Sets the text color to Bootstrap's danger color (red) */
+}
+
+.logout-btn i {
+    font-size: 1rem; /* Sets the font size of the icon inside the logout button to 1rem */
+}
+
+.logout-btn:hover {
+    background-color: #dc3545 !important; /* Changes the background color to red on hover */
+    color: white !important; /* Changes the text color to white on hover */
+}
+
+/* Sidebar Styling */
+#layoutSidenav {
+    display: flex; /* Makes the layout a flex container */
+    min-height: 90vh; /* Sets the minimum height of the layout to 90% of the viewport height */
+}
+
+#layoutSidenav_nav {
+    width: 250px; /* Sets the width of the sidebar to 250px */
+    background-color: #343a40; /* Sets the background color of the sidebar to dark grey */
+    display: flex; /* Makes the sidebar a flex container */
+    flex-direction: column; /* Arranges the sidebar items in a column */
+    transition: all 0.3s ease-in-out; /* Adds a smooth transition effect for all properties */
+}
+
+.sb-sidenav {
+    display: flex; /* Makes the sidebar content a flex container */
+    flex-direction: column; /* Arranges the sidebar content in a column */
+    height: 100%; /* Sets the height of the sidebar content to 100% */
+}
+
+.sb-sidenav-menu {
+    flex-grow: 1; /* Allows the menu to grow and fill the remaining space */
+    overflow-y: auto; /* Enables vertical scrolling if the content overflows */
+    padding-top: 1rem; /* Adds padding at the top of the menu */
+}
+
+.sb-sidenav .nav {
+    flex-direction: column; /* Arranges the navigation links in a column */
+}
+
+.sb-sidenav .nav-link {
+    color: #adb5bd; /* Sets the color of the navigation links to light grey */
+    padding: 12px 20px; /* Adds padding inside each navigation link */
+    display: flex; /* Makes each link a flex container */
+    align-items: center; /* Aligns items vertically in the center */
+    text-decoration: none; /* Removes the underline from the links */
+    transition: all 0.2s ease-in-out; /* Adds a smooth transition effect for all properties */
+}
+
+.sb-sidenav .nav-link:hover {
+    background-color: #495057; /* Changes the background color on hover to a slightly lighter grey */
+    color: #ffffff; /* Changes the text color to white on hover */
+}
+
+.sb-sidenav .nav-link .sb-nav-link-icon {
+    margin-right: 10px; /* Adds a right margin to the icon inside the navigation link */
+}
+
+.sb-sidenav-menu-heading {
+    color: rgba(255, 255, 255, 0.25); /* Sets the color of the menu heading to semi-transparent white */
+    padding: 1.75rem 1rem 0.75rem; /* Adds padding around the menu heading */
+    font-size: 0.75rem; /* Sets the font size of the menu heading */
+    font-weight: bold; /* Makes the menu heading text bold */
+    text-transform: uppercase; /* Transforms the text to uppercase */
+}
+
+/* Ensure the toggle button is above the sidebar */
+.toggle-icon {
+    z-index: 1040; /* Sets a high z-index to ensure the toggle button is above the sidebar */
+    position: relative; /* Ensures the z-index works correctly */
+}
+
+/* Optional: Add padding to the body when the sidebar is open to prevent content overlap */
+body.sb-sidenav-toggled {
+    padding-left: 250px; /* Adds padding to the left of the body to match the sidebar width */
+}
+
+/* Hide the sidebar by default on all screen sizes */
+#layoutSidenav_nav {
+    position: fixed; /* Fixes the sidebar in place */
+    left: -250px; /* Moves the sidebar off-screen by default */
+    width: 250px; /* Sets the width of the sidebar */
+    height: 100vh; /* Sets the height of the sidebar to 100% of the viewport height */
+    transition: all 0.3s ease-in-out; /* Adds a smooth transition effect for all properties */
+    z-index: 1030; /* Sets a high z-index to ensure the sidebar is above other content */
+    background-color: #343a40; /* Sets the background color of the sidebar */
+}
+
+/* Show the sidebar when the sb-sidenav-toggled class is applied */
+body.sb-sidenav-toggled #layoutSidenav_nav {
+    left: 0; /* Moves the sidebar into view */
+}
+
+/* Optional: Add a backdrop overlay for smaller screens */
+@media (max-width: 768px) {
+    body.sb-sidenav-toggled::before {
+        content: ''; /* Adds an empty content block */
+        position: fixed; /* Fixes the backdrop in place */
+        top: 0; /* Positions the backdrop at the top */
+        left: 0; /* Positions the backdrop at the left */
+        width: 100%; /* Sets the width of the backdrop to 100% */
+        height: 100%; /* Sets the height of the backdrop to 100% */
+        background: rgba(0, 0, 0, 0.5); /* Sets the background color to semi-transparent black */
+        z-index: 1029; /* Sets a z-index below the sidebar but above other content */
+    }
+}
+
+/* Ensure the top navigation bar stays fixed */
+.sb-topnav {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Positions the navbar at the top */
+    left: 0; /* Positions the navbar at the left */
+    right: 0; /* Positions the navbar at the right */
+    z-index: 1031; /* Sets a high z-index to ensure the navbar is above the sidebar */
+    transition: none; /* Disables transitions for the navbar */
+}
+
+/* Main content area */
+#layoutSidenav {
+    margin-left: 0; /* Default state: no margin on the left */
+    transition: margin-left 0.3s ease-in-out; /* Adds a smooth transition effect for the margin */
+    padding-top: 56px; /* Adds padding to account for the fixed navbar height */
+}
+
+/* Adjust main content area when sidebar is toggled */
+/* body.sb-sidenav-toggled #layoutSidenav {
+    margin-left: 250px; /
+} */
+
+.sb-sidenav-footer {
+    position: relative; /* Positions the footer relative to its container */
+    bottom: 0; /* Positions the footer at the bottom */
+    left: 0; /* Positions the footer at the left */
+    right: 0; /* Positions the footer at the right */
+    padding: 1rem; /* Adds padding inside the footer */
+    background-color: #343a40; /* Sets the background color of the footer to match the sidebar */
+    border-top: 1px solid #495057; /* Adds a border at the top of the footer for separation */
+    padding: 0.75rem; /* Adds padding inside the footer */
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+    color: rgba(255, 255, 255, 0.5); /* Sets the text color to semi-transparent white */
+}
+
+/* Style the text inside the footer */
+.sb-sidenav-footer .small {
+    display: block; /* Ensures each line of text is on a new line */
+    margin-bottom: 0.25rem; /* Adds spacing between lines of text */
+    color: rgba(255, 255, 255, 0.25); /* Sets the text color to semi-transparent white */
+}
+
+/* Style the active link (e.g., the date) */
+.sb-sidenav-footer .small .active {
+    color: #ffffff !important; /* Sets the text color to white for the active link */
+    font-weight: bold; /* Makes the active link text bold */
+}
+
+/*button*/
+
+/* Custom button styles */
+.btn-custom {
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for better spacing */
+    font-size: 16px; /* Slightly larger font */
+    color: #333; /* Dark text color */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-custom:hover {
+    background-color: #e9ecef; /* Slightly darker background on hover */
+    border-color: #ccc; /* Darker border on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.btn-custom i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* form */
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.btn-form {
+    margin-right: 10px;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/*loading screen*/
+#loadingScreen {
+    position: fixed; /* Keep it centered even when scrolling */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7); /* Optional: Add a dark background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000; /* Ensure it appears on top of other elements */
+}
+
+
+
+#loadingScreen i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* edit and delete button*/
+.action-btn {
+    width: 36px; /* Adjust button size */
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.action-btn i {
+    font-size: 14px;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* chart */
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translate(-50%, -100%);
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.bar:hover {
+    cursor: pointer;
+    fill: darkblue !important;
+}
+
+.pie path:hover {
+    cursor: pointer;
+    opacity: 0.7 !important;
+}
+
+
+.small-card {
+    max-width: 600px; /* Adjust width */
+    margin: auto;
+}
+
+.chart-container {
+    width: 100%; 
+    height: 300px; /* Reduce chart height */
+}
